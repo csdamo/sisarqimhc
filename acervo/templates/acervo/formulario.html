@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load widget_tweaks %}
+
+{% block title %}{{acao}} {{titulo}}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="pt-2 page-header">
+        <h2>{{titulo}}</h2>
+    </div>
+
+    <form method="POST">{% csrf_token %}
+
+        <!-- <div class="form-row">
+            {{form|crispy }}
+        </div> -->
+        <div class="row">
+            <div class="form-group col-md-2 mb-0">
+                {{ form.ordem_exibicao|add_class:"form-control"|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-5 mb-0">
+                {{ form.codigo|add_class:"form-control"|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-5 mb-0">
+                {{ form.sigla|add_class:"form-control"|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row ">
+            <div class="form-group col-md-12 mb-0">
+                {{ form.titulo|add_class:"form-control"|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row ">
+            <div class="form-group col-md-12 mb-0">
+                {{ form.descricao|add_class:"form-control"|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row ">
+            <div class="form-group col-md-12 mb-0">
+                {{ form.info_adicionais|add_class:"form-control"|as_crispy_field }}
+            </div>
+        </div>
+        <div class="">
+            <a class="btn btn-secondary" href="/acervo/lista" role="button">Voltar</a>
+            <button type="submit" class="btn btn-primary" name="salvar">Salvar</button>
+        </div>
+        
+    </form>
+
+</div>
+
+{% endblock %}

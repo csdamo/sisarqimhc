@@ -1,0 +1,17 @@
+ virtualenv -p=C:\Users\crist\AppData\Local\Programs\Python\Python311\python.exe venv
+ 
+ .\venv\Scripts\activate
+
+ pip install django
+
+ pip freeze > requirements.txt
+
+ django-admin startproject setup .
+
+py .\manage.py startapp main
+
+pip install python-dotenv
+
+pip freeze > .\requirements.txt
+
+ py .\manage.py createsuperuser

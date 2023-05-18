@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Acervos{% endblock %}
+
+{% block content %}
+    <section class="container">
+
+        <table width="100%" class="table" id="simpletable">
+            <thead>
+                <tr>
+                    <th class="">Cód.</th>
+                    <th class="">Sigla</th>
+                    <th class="">Título</th>                
+                    <th class="">Ordem</th>
+                    <th class=""></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lista %}
+                <tr>
+                    <td class="">{{item.codigo}}</td>
+                    <td class="">{{item.sigla}}</td>
+                    <td class="">{{item.titulo}}</td>
+                    <td class="">{{item.ordem_exibicao}}</td>
+                    <td>
+                        <a href="/acervo/edita/{{item.id}}"
+                            title="Edita" >
+                            <span><i class="bi bi-pencil-square"></i></span>
+                        </a>
+                        <a href="{% url 'acervo-deleta' id=item.id %}"  
+                            title="Delete" 
+                            data-toggle="modal" 
+                            data-target="#confirmDeleteModal" 
+                            class="confirm-delete"
+                            id="deleteButton{{item.id}}">
+                            <span><i class="bi bi-trash3"></i></span>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            <a class="btn btn-primary" href="/acervo/novo" role="button">Novo</a>
+        </div>
+    </section>
+
+{% endblock %}
