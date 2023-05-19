@@ -20,7 +20,7 @@
 * posicionar-se no diretório
 * No terminal, executar o comando:
 ```
-git clone https://github.com/csdamo/sisarqimhc
+https://github.com/csdamo/sisarqimhc.git
 ```
 
 #### Criando ambiente virtual de desenvolvimento:
