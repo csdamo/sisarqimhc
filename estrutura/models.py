@@ -10,8 +10,8 @@ class Estrutura(models.Model):
     descricao = models.TextField()
     info_adicionais = models.TextField(blank=True, null=True)
     nivel = models.PositiveSmallIntegerField()
-    acervo = models.ForeignKey(Acervo, on_delete=models.PROTECT)
-    estrutura_nivel_superior = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True)
+    acervo = models.ForeignKey(Acervo, on_delete=models.PROTECT, related_name='estrutura_acervo')
+    estrutura_nivel_superior = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, related_name='nivel_superior')
     
     criado_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)

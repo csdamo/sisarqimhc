@@ -72,14 +72,14 @@ HOST = localhost
 ```
 python manage.py migrate
 ```
-esse comando fará com que as tabelas do ando de dados sejam criadas
+esse comando fará com que as tabelas do banco de dados sejam criadas
 
 * Criar super usuário: rode o comando:
 
 ```
 python manage.py createsuperuser
 ```
-será necessário informar um login e senha (o e-mail é opcional)
+será necessário informar um login, e-mail e senha (você usará o e-mail para fazer login) 
 
 #### Subindo Servidor:
 * Rodar o comando:

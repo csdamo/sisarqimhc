@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Acervo
+from acervo.models import Acervo
 
 
 class AcervoAdmin(admin.ModelAdmin):

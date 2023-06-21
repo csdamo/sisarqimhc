@@ -19,5 +19,5 @@ class Acervo(models.Model):
     class Meta:
         db_table = "acervo"
         verbose_name_plural = "Acervos"
-        ordering = ['sigla']
+        ordering = ['ordem_exibicao']
         

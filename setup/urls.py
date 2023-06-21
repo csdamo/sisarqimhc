@@ -16,21 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.generic.base import TemplateView
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('',include('main.urls')),
-    path('acervo/',include('acervo.urls')),
-    path('estrutura/',include('estrutura.urls')),
-
+    path('', include('main.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('account/', include('user_app.api.urls')),
+    path('acervo/',include('acervo.api.urls')),
+    path('estrutura/',include('estrutura.api.urls')),
+    path('produtor/',include('produtor.api.urls')),
+    path('pessoa/',include('pessoa.api.urls')),
+    path('assunto/',include('assunto.api.urls')),
+    path('local/',include('local.api.urls')),
+    path('documento/',include('documento.api.urls')),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    urlpatterns += staticfiles_urlpatterns()
